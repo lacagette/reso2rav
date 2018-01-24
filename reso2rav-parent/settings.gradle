@@ -1,0 +1,6 @@
+rootProject.name = 'reso2rav-parent'
+
+include 'reso2rav-core'
+include 'reso2rav-batch'
+include 'reso2rav-web'
+include 'reso2rav-front'
