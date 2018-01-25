@@ -4,3 +4,4 @@
 /.settings
 /.gradle
 /target
+*.idea*
