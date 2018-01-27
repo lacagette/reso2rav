@@ -4,7 +4,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import fr.mouvement.reso2rav.core.domain.Producteur;
 
-public interface ProducteurRespository extends RestRepositoryMethodExportedFalse<Producteur, String> {
+public interface ProducteurRestRespository extends RestRepositoryMethodExportedFalse<Producteur, String> {
 
 	@RestResource(exported = true)
 	@Override
