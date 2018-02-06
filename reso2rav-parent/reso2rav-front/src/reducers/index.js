@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import producerReducer from './producersReducer';
+import producersReducer from './producersReducer';
 const rootReducer = combineReducers({
     // Todo: Ajouter ici les reducers pour chaque composant
-    producerReducer
+    producersReducer
 });
 export default rootReducer;
