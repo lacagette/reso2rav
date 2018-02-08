@@ -1,27 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-class Producer extends React.component {
+class Producer extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            id,
-            firstName: "Bob",
-            lastName: "Léponge",
-            address: "Au fond a droite",
-            products: "Légumes",
-            isDisabled: true
-
-        }
+        this.producer = props.producer;
     }
     render() {
         return <li
-        style={{ textDecoration : this.state.isDisabled ?'line-through':'none'}}
+        style={{ textDecoration : this.producer.isDisabled ?'line-through':'none'}}
         >
-            Prénom: {this.state.firstName}
-            Nom: {this.state.lastName}
-            Adresse: {this.state.address}
-            Produits: {this.state.products}
+            Prénom: {this.producer.firstName}
+            Nom: {this.producer.lastName}
+            Adresse: {this.producer.address}
+            Produits: {this.producer.products}
         </li>
     }
 }
+
+export default Producer;
