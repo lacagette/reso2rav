@@ -21,7 +21,7 @@ function receiveProducers(json) {
 export function fetchProducers() {
     return dispatch => {
         dispatch(requestProducers())
-        return fetch(`${URL}/producers`)
+        return fetch(`${URL}/producteurs`)
             .then(response => response.json())
             .then(json => dispatch(receiveProducers(json)))
     }

@@ -12,6 +12,11 @@ public class SpringRepositoryRestConfiguration extends RepositoryRestConfigurerA
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		config.setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ANNOTATED);
+		config.getCorsRegistry()
+				.addMapping("/**") //
+				.allowedOrigins("*") //
+				.allowedHeaders("*") //
+				.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
 	}
 
 	public class NONE_BY_DEFAULT implements RepositoryDetectionStrategy {
