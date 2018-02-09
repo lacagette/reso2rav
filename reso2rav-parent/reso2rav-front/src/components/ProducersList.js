@@ -5,12 +5,12 @@ import initialState from '../initialState';
 class ProducersList extends React.Component{
     constructor(props){
         super(props);
-        this.producers= []
+        this.producers= initialState.producers;
     }
-    componentWillMount(){
-        // Todo: Appel du service pour recup des datas
-        this.producers = initialState.producers;
-    }
+    // componentWillMount(){
+    //     // Todo: Appel du service pour recup des datas
+    //     this.producers = initialState.producers;
+    // }
     render(){
         return(
             <div>
