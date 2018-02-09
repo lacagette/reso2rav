@@ -10,7 +10,7 @@ const producersReducer = (state = [], action) =>{
         case 'RECEIVE_PRODUCERS':
             return Object.assign({}, state, {
                 isFetching: false,
-                producers: action.data.producers
+                producers: action.producers
             })
         default:
             return state;
