@@ -1,9 +1,22 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import rootReducer from  './reducers';
-export default(initialState) => {
-    return createStore(
-        rootReducer,
-        initialState,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    );
-}
+import initialState  from './initialState';
+import producersReducer from './reducers/producersReducer';
+import {fetchProducers} from './actions';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store =  createStore(
+    //rootReducer,
+    producersReducer,
+    initialState,
+    composeEnhancers(
+        applyMiddleware(thunkMiddleware)
+    )
+);
+
+store.dispatch(fetchProducers()).then(() => console.log(store.getState()));
+
+
+export default store;
