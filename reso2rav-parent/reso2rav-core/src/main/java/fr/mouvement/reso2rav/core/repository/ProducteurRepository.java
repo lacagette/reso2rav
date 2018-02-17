@@ -1,13 +1,11 @@
 package fr.mouvement.reso2rav.core.repository;
 
-//@RepositoryRestResource(exported = false)
-public interface ProducteurRepository /*
-										 * extends MongoRepository<Producteur,
-										 * String>
-										 */ {
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RestResource;
 
-	// @RestResource(exported = true)
-	// @Override
-	// List<Producteur> findAll();
+import fr.mouvement.reso2rav.core.domain.Producteur;
+
+@RestResource
+public interface ProducteurRepository extends PagingAndSortingRepository<Producteur, String> {
 
 }

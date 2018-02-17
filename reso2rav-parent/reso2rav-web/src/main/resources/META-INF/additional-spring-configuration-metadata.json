@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "reso2rav.environnement",
+  "type": "java.lang.String",
+  "description": "Environnement dans lequel s'exécute l'appli (LOCAL, DEV, TEST, PROD...)"
+}]}
