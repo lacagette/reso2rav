@@ -7,8 +7,8 @@ import lombok.experimental.Delegate;
 public class IdentiteAvecAdresse {
 
 	@Delegate
-	private Identite identite;
+	private Identite identite = new Identite();
 
 	@Delegate
-	private Adresse adresse;
+	private Adresse adresse = new Adresse();
 }

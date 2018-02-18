@@ -16,7 +16,7 @@ public class Producteur {
 	@Id
 	private String id;
 
-	private IdentiteAvecAdresse identiteAvecAdresse;
+	private IdentiteAvecAdresse identiteAvecAdresse = new IdentiteAvecAdresse();
 
 	private String nomExploitation;
 
