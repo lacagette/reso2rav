@@ -1,5 +1,6 @@
 import React from 'react';
 import Producer from './Producer';
+import { connect } from 'react-redux';
 
 class ProducersList extends React.Component{
     constructor(props){
@@ -13,6 +14,9 @@ class ProducersList extends React.Component{
     //     // Todo: Appel du service pour recup des datas
     //     this.producers = initialState.producers;
     // }
+    componentDidMount(){
+
+    }
     render(){
         return(
             <div>
@@ -21,11 +25,21 @@ class ProducersList extends React.Component{
                     {
                     	this.producers.map((producer, index) => (
                         <Producer key={index} producer={producer}/>
-                    ))}
+                        ))
+                    }
                 </ul>
             </div>
         )
     }
 }
 
-export default ProducersList;
+const mapStateToProps = (state) => {
+    return {
+        producers: state.producers,
+        hasErrored: state.producersHasErrored,
+        isLoading: state.producersIsLoading
+    };
+};
+
+
+export default connect(mapStateToProps)(ProducersList);

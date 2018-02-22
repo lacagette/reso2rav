@@ -16,8 +16,12 @@ public class Reso2RavWebProperties {
 		LOCAL, PRODUCTION;
 	}
 
-	public Environnement geEnvironnementEnum() {
-		return Environnement.valueOf(environnement);
+	public Environnement getEnvironnementEnum() {
+		return Environnement.LOCAL;
+	}
+
+	public void setEnvironnement(String environnement) {
+		this.environnement = environnement;
 	}
 
 }

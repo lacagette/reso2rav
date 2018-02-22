@@ -16,12 +16,12 @@ public class SpringRepositoryRestConfiguration extends RepositoryRestConfigurerA
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-		if (reso2RavWebProperties.geEnvironnementEnum() == Environnement.LOCAL) {
+		if (reso2RavWebProperties.getEnvironnementEnum() == Environnement.LOCAL) {
 			config.setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ANNOTATED);
 			config.getCorsRegistry().addMapping("/**") //
 					.allowedHeaders("*") //
 					.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
-					.allowedOrigins("http://localhost:3000");
+					.allowedOrigins("*");
 		}
 	}
 

@@ -11,6 +11,7 @@ function requestProducers() {
 }
 
 export const RECEIVE_PRODUCERS = 'RECEIVE_PRODUCERS';
+
 function receiveProducers(json) {
     return {
         type: RECEIVE_PRODUCERS,
@@ -21,7 +22,7 @@ function receiveProducers(json) {
 export function fetchProducers() {
     return dispatch => {
         dispatch(requestProducers())
-        console.log("plop");
+        console.log("Request procucteurs");
         return fetch(`${URL}/producteurs`)
             .then(response => response.json())
             .then(json => dispatch(receiveProducers(json)))
