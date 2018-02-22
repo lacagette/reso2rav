@@ -13,14 +13,14 @@ const middleware = [
   routerMiddleware(history)
 ]
 
-const composedEnhancers = compose(
-  applyMiddleware(...middleware)
-)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
   initialState,
-  composedEnhancers
+  composeEnhancers(
+      applyMiddleware(...middleware)
+  )
 )
 
 
