@@ -6,6 +6,10 @@ import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import fr.mouvement.reso2rav.web.configuration.Reso2RavWebProperties.Environnement;
 
 @Component
@@ -20,9 +24,14 @@ public class SpringRepositoryRestConfiguration extends RepositoryRestConfigurerA
 			config.setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ANNOTATED);
 			config.getCorsRegistry().addMapping("/**") //
 					.allowedHeaders("*") //
-					.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
-					.allowedOrigins("*");
+					.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH").allowedOrigins("*");
 		}
+	}
+
+	@Override
+	public void configureJacksonObjectMapper(ObjectMapper objectMapper) {
+		objectMapper.setVisibility(PropertyAccessor.ALL, Visibility.NONE);
+		objectMapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 	}
 
 }
