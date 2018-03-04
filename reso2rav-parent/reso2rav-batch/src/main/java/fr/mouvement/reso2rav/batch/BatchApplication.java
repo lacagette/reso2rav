@@ -5,8 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages = { "fr.mouvement.reso2rav.core", "fr.mouvement.reso2rav.batch" })
+@SpringBootApplication(scanBasePackages = { "fr.mouvement.reso2rav.core", "fr.mouvement.reso2rav.batch" }, exclude = {
+		EmbeddedServletContainerAutoConfiguration.class, WebMvcAutoConfiguration.class })
 @EnableBatchProcessing
 public class BatchApplication {
 
