@@ -2,29 +2,44 @@ import fetch from 'cross-fetch';
 
 const URL = 'http://localhost:8080';
 
-export const REQUEST_PRODUCERS = 'REQUEST_PRODUCERS';
+export const FETCHING_PRODUCERS = 'FETCHING_PRODUCERS';
 function requestProducers() {
     return {
-        type: REQUEST_PRODUCERS,
+        type: FETCHING_PRODUCERS,
         producers: []
     }
 }
 
-export const RECEIVE_PRODUCERS = 'RECEIVE_PRODUCERS';
+export const RECEIVED_PRODUCERS = 'RECEIVED_PRODUCERS';
 
 function receiveProducers(json) {
     return {
-        type: RECEIVE_PRODUCERS,
+        type: RECEIVED_PRODUCERS,
         producers: json._embedded.producteurs
+    }
+}
+
+export const ERRORED_PRODUCERS = 'ERRORED_PRODUCERS';
+
+function hasErroredProducers(error) {
+    return {
+        type: ERRORED_PRODUCERS,
+        error: error
     }
 }
 
 export function fetchProducers() {
     return dispatch => {
         dispatch(requestProducers())
-        console.log("Request procucteurs");
+
         return fetch(`${URL}/producteurs`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                 return response.json()
+            })
             .then(json => dispatch(receiveProducers(json)))
+            .catch(error => dispatch(hasErroredProducers(error.message)))
     }
 }

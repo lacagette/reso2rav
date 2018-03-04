@@ -1,16 +1,22 @@
-import REQUEST_PRODUCERS from '../actions';
-import RECEIVE_PRODUCERS from '../actions';
+import FETCHING_PRODUCERS from '../actions';
+import RECEIVED_PRODUCERS from '../actions';
 
 const producersReducer = (state = [], action) =>{
     switch (action.type) {
-        case 'REQUEST_PRODUCERS':
+        case 'FETCHING_PRODUCERS':
             return Object.assign({},state, {
                 isFetching: true
             });
-        case 'RECEIVE_PRODUCERS':
+        case 'RECEIVED_PRODUCERS':
             return Object.assign({}, state, {
                 isFetching: false,
                 producers: action.producers
+            })
+        case 'ERRORED_PRODUCERS':
+            return Object.assign({}, state, {
+                isFetching: false,
+                hasErrored: true,
+                error: action.error
             })
         default:
             return state;

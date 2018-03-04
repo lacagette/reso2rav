@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
 import logo from '../img/logo.svg';
 import Accueil from './Accueil'
-import ProducersList from './ProducersList'
+import ProducersContainer from './ProducersContainer';
 
 const App = () => (
   <div className="App">
@@ -19,7 +19,7 @@ const App = () => (
 	  <main>
 	  <Switch>
 	    <Route exact path='/' component={Accueil}/>
-	    <Route exact path='/producteurs' component={ProducersList}/>
+	    <Route exact path='/producteurs' component={ProducersContainer}/>
 	  </Switch>
 	</main>
   </div>
