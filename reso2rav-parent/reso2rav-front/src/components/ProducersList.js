@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Producer from './Producer';
 
-class ProducersList extends React.Component{
+class ProducersList extends Component{
     constructor(props){
         super(props);
         this.producers=[

@@ -31,7 +31,7 @@ const store = createStore(
 
 
 
-store.dispatch(fetchProducers()).then(() => console.log(store.getState()));
+// store.dispatch(fetchProducers()).then(() => console.log(store.getState()));
 
 
 export default store;

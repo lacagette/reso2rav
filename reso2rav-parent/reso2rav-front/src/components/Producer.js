@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class Producer extends React.Component {
+class Producer extends Component {
     constructor(props){
         super(props);
         this.producer = props.producer;
