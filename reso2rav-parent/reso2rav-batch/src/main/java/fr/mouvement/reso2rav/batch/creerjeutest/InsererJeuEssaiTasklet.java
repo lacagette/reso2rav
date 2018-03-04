@@ -64,6 +64,8 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identiteAvecAdresse.setCodePostal("44130");
 		identiteAvecAdresse.setCommune("Blain");
 
+		producteur1.setIdentiteAvecAdresse(identiteAvecAdresse);
+
 		Produit produit11 = new Produit();
 
 		produit11.setTypeProduit(TypeProduit.PAIN);
@@ -102,6 +104,8 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identiteAvecAdresse2.setCodePostal("44160");
 		identiteAvecAdresse2.setCommune("Sainte-Anne-sur-Brivet");
 
+		producteur2.setIdentiteAvecAdresse(identiteAvecAdresse2);
+
 		Produit produit21 = new Produit();
 
 		produit21.setTypeProduit(TypeProduit.POULE);
@@ -139,6 +143,8 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identiteAvecAdresse3.setLieuDit("Tresse");
 		identiteAvecAdresse3.setCodePostal("44630");
 		identiteAvecAdresse3.setCommune("Plesse");
+
+		producteur3.setIdentiteAvecAdresse(identiteAvecAdresse3);
 
 		Produit produit31 = new Produit();
 
