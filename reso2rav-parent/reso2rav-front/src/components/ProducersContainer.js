@@ -12,11 +12,11 @@ class ProducersContainer extends Component {
     }
     render() {
             if (this.props.hasErrored) {
-                return <p>Sorry! There was an error loading the items: {this.props.error}</p>;
+                return <p>Désolé un erreur s'est produite: {this.props.error}</p>;
             }
 
             if (this.props.isFetching) {
-                return <p>Loading…</p>;
+                return <p>Chargement…</p>;
             }
         return (
             <ProducersList producers={this.props.producers}/>
