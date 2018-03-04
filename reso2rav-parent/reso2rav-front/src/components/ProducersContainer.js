@@ -7,14 +7,17 @@ import {fetchProducers} from '../actions';
 import ProducersList from './ProducersList';
 
 class ProducersContainer extends Component {
-    // componentWillMount(){
-//     // Todo: Appel du service pour recup des datas
-//     this.producers = initialState.producers;
-// }
     componentDidMount(){
         this.props.fetchData();
     }
     render() {
+            if (this.props.hasErrored) {
+                return <p>Sorry! There was an error loading the items: {this.props.error}</p>;
+            }
+
+            if (this.props.isFetching) {
+                return <p>Loading…</p>;
+            }
         return (
             <ProducersList producers={this.props.producers}/>
         )
@@ -24,8 +27,9 @@ class ProducersContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         producers: state.producers,
-        hasErrored: state.producersHasErrored,
-        isLoading: state.producersIsLoading
+        hasErrored: state.hasErrored,
+        isFetching: state.isFetching,
+        error: state.error
     };
 };
 
