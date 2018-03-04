@@ -24,4 +24,8 @@ public class Producteur {
 
 	private Set<Produit> produits = new HashSet<>();
 
+	public void addProduit(Produit produit) {
+		this.produits.add(produit);
+	}
+
 }
