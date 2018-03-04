@@ -32,7 +32,7 @@ export function fetchProducers() {
     return dispatch => {
         dispatch(requestProducers())
 
-        return fetch(`${URL}/producteus`)
+        return fetch(`${URL}/producteurs`)
             .then(response => {
                 if (!response.ok) {
                     throw Error(response.statusText);
