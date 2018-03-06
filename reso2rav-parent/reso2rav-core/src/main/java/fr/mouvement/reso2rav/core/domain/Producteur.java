@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
+import lombok.experimental.Delegate;
 
 @Data
 @Document
@@ -16,7 +17,11 @@ public class Producteur {
 	@Id
 	private String id;
 
-	private IdentiteAvecAdresse identiteAvecAdresse = new IdentiteAvecAdresse();
+	@Delegate
+	private Identite identite = new Identite();
+
+	@Delegate
+	private Adresse adresse = new Adresse();
 
 	private String nomExploitation;
 

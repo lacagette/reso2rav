@@ -23,7 +23,7 @@ public class MongoLazyLoadingTest {
 
 		Producteur producteur = new Producteur();
 
-		producteur.getIdentiteAvecAdresse().setNom("Gentil producteur");
+		producteur.setNom("Gentil producteur");
 
 		producteurRepository.save(producteur);
 
@@ -34,7 +34,7 @@ public class MongoLazyLoadingTest {
 
 		Producteur producteur = producteurRepository.findAll().iterator().next();
 
-		assertEquals("Gentil producteur", producteur.getIdentiteAvecAdresse().getNom());
+		assertEquals("Gentil producteur", producteur.getNom());
 
 	}
 
