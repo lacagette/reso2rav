@@ -13,9 +13,9 @@ import org.springframework.stereotype.Component;
 
 import com.mongodb.MongoClient;
 
+import fr.mouvement.reso2rav.core.domain.Adresse;
 import fr.mouvement.reso2rav.core.domain.FrequenceProduit;
 import fr.mouvement.reso2rav.core.domain.Identite;
-import fr.mouvement.reso2rav.core.domain.IdentiteAvecAdresse;
 import fr.mouvement.reso2rav.core.domain.Producteur;
 import fr.mouvement.reso2rav.core.domain.Produit;
 import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
@@ -57,14 +57,14 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identite.setMail("jean-mi@mail.fr");
 		identite.setTelephone("0123456789");
 
-		IdentiteAvecAdresse identiteAvecAdresse = new IdentiteAvecAdresse();
+		Adresse adresse = new Adresse();
 
-		identiteAvecAdresse.setIdentite(identite);
-		identiteAvecAdresse.setLieuDit("La Conillais");
-		identiteAvecAdresse.setCodePostal("44130");
-		identiteAvecAdresse.setCommune("Blain");
+		producteur1.setIdentite(identite);
+		adresse.setLieuDit("La Conillais");
+		adresse.setCodePostal("44130");
+		adresse.setCommune("Blain");
 
-		producteur1.setIdentiteAvecAdresse(identiteAvecAdresse);
+		producteur1.setAdresse(adresse);
 
 		Produit produit11 = new Produit();
 
@@ -97,14 +97,14 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identite2.setMail("momo@mail.fr");
 		identite2.setTelephone("0987654321");
 
-		IdentiteAvecAdresse identiteAvecAdresse2 = new IdentiteAvecAdresse();
+		Adresse adresse2 = new Adresse();
 
-		identiteAvecAdresse2.setIdentite(identite2);
-		identiteAvecAdresse2.setLieuDit("La Mer de l'Isle");
-		identiteAvecAdresse2.setCodePostal("44160");
-		identiteAvecAdresse2.setCommune("Sainte-Anne-sur-Brivet");
+		producteur2.setIdentite(identite2);
+		adresse2.setLieuDit("La Mer de l'Isle");
+		adresse2.setCodePostal("44160");
+		adresse2.setCommune("Sainte-Anne-sur-Brivet");
 
-		producteur2.setIdentiteAvecAdresse(identiteAvecAdresse2);
+		producteur2.setAdresse(adresse2);
 
 		Produit produit21 = new Produit();
 
@@ -137,14 +137,14 @@ public class InsererJeuEssaiTasklet implements Tasklet {
 		identite3.setMail("roro@mail.fr");
 		identite3.setTelephone("0666666666");
 
-		IdentiteAvecAdresse identiteAvecAdresse3 = new IdentiteAvecAdresse();
+		Adresse adresse3 = new Adresse();
 
-		identiteAvecAdresse3.setIdentite(identite3);
-		identiteAvecAdresse3.setLieuDit("Tresse");
-		identiteAvecAdresse3.setCodePostal("44630");
-		identiteAvecAdresse3.setCommune("Plesse");
+		producteur3.setIdentite(identite3);
+		adresse3.setLieuDit("Tresse");
+		adresse3.setCodePostal("44630");
+		adresse3.setCommune("Plesse");
 
-		producteur3.setIdentiteAvecAdresse(identiteAvecAdresse3);
+		producteur3.setAdresse(adresse3);
 
 		Produit produit31 = new Produit();
 
