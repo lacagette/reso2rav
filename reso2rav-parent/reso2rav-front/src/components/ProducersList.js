@@ -4,10 +4,10 @@ import Producer from './Producer';
 class ProducersList extends Component{
     constructor(props){
         super(props);
-        this.producers=[
+        /*this.producers=[
 	        // { id: 1, firstName: "Bob", lastName: "Léponge", address: "Au fond a droite", products: "Légumes", isDisabled: false},
 	        // { id: 2, firstName: "Robert", lastName: "Dacier", address: "Au fond a gauche", products: "Fruits", isDisabled: true}
-	    ];
+	    ];*/
     }
 
     render(){
@@ -23,7 +23,7 @@ class ProducersList extends Component{
                 <h2>Liste des producteurs:</h2>
                 <ul>
                     {
-                    	this.producers.map((producer, index) => (
+                    	this.props.producers.map((producer, index) => (
                         <Producer key={index} producer={producer}/>
                         ))
                     }

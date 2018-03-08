@@ -7,7 +7,7 @@ class Producer extends Component {
     }
     render() {
         return <li style={{ textDecoration : this.producer.isDisabled ?'line-through':'none'}}>
-            Prénom: {this.producer.firstName} Nom: {this.producer.lastName} Adresse: {this.producer.address} Produits: {this.producer.products}
+            Prénom: {this.producer.identite.prenom} Nom: {this.producer.identite.nom} Adresse: {this.producer.adresse.nomVoie}
         </li>
     }
 }
