@@ -6,24 +6,6 @@ import { connect } from 'react-redux';
 import {fetchProducers} from '../actions';
 import ProducersList from './ProducersList';
 
-class ProducersContainer extends Component {
-    componentDidMount(){
-        this.props.fetchData();
-    }
-    render() {
-            if (this.props.hasErrored) {
-                return <p>Sorry! There was an error loading the items: {this.props.error}</p>;
-            }
-
-            if (this.props.isFetching) {
-                return <p>Loading…</p>;
-            }
-        return (
-            <ProducersList producers={this.props.producers}/>
-        )
-    }
-
-}
 const mapStateToProps = (state) => {
     return {
         producers: state.producers,
@@ -39,4 +21,32 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProducersContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProducersList);
+
+// class ProducersContainer extends Component {
+//
+//   constructor(props){
+//       super(props);
+//       this.state={producers : []}
+//   }
+//
+//   componentDidMount() {
+//     this.props.fetchData();
+//   }
+//
+//   render() {
+//     debugger
+//           if (this.props.hasErrored) {
+//               return <p>Sorry! There was an error loading the items: {this.props.error}</p>;
+//           }
+//
+//           if (this.props.isFetching) {
+//               return <p>Loading…</p>;
+//           }
+//           debugger
+//       return (
+//           <ProducersList producers={this.props.producers}/>
+//       )
+//   }
+//
+// }
