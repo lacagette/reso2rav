@@ -1,0 +1,69 @@
+[{
+  "identite" : {
+    "nom" : "Jean Louis",
+    "prenom" : "Tamère",
+    "telephone" : "0634343434",
+    "mail" : "jlt@email.bidon"
+  },
+  "adresse" : {
+    "numero" : "23",
+    "nomVoie" : "Au fond",
+    "lieuDit" : "Adroite",
+    "commune" : "Labas",
+    "codePostal" : "84440"
+  },
+  "nomExploitation" : "Chez l'enc...",
+  "datePriseContact" : null,
+  "produits" : [ ]
+},{
+  "identite" : {
+    "nom" : "Jean Robert",
+    "prenom" : "Tagueule",
+    "telephone" : "0634343422",
+    "mail" : "jrt@email.bidon"
+  },
+  "adresse" : {
+    "numero" : "4",
+    "nomVoie" : "rue du Gnou",
+    "lieuDit" : "Adroite",
+    "commune" : "Labas",
+    "codePostal" : "84440"
+  },
+  "nomExploitation" : "L'autre conn...",
+  "datePriseContact" : null,
+  "produits" : [ ]
+},{
+  "identite" : {
+    "nom" : "Jean Marcel",
+    "prenom" : "Ducable",
+    "telephone" : "0632123454",
+    "mail" : "jmd@email.bidon"
+  },
+  "adresse" : {
+    "numero" : "3",
+    "nomVoie" : "Avenue du Boisdeux",
+    "lieuDit" : "Boulogne",
+    "commune" : "Lahaut",
+    "codePostal" : "51440"
+  },
+  "nomExploitation" : "Le buisson ardent",
+  "datePriseContact" : null,
+  "produits" : [ ]
+},{
+  "identite" : {
+    "nom" : "Jean Mathieu",
+    "prenom" : "Dugenou",
+    "telephone" : "0633265343",
+    "mail" : "jlt@email.bidon"
+  },
+  "adresse" : {
+    "numero" : "1",
+    "nomVoie" : "rue Peuplus",
+    "lieuDit" : "Adroite",
+    "commune" : "En bas",
+    "codePostal" : "32000"
+  },
+  "nomExploitation" : "Au bon jambon",
+  "datePriseContact" : null,
+  "produits" : [ ]
+}]

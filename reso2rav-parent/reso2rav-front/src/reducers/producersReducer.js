@@ -1,6 +1,3 @@
-import FETCHING_PRODUCERS from '../actions';
-import RECEIVED_PRODUCERS from '../actions';
-
 const producersReducer = (state = [], action) =>{
     switch (action.type) {
         case 'FETCHING_PRODUCERS':
