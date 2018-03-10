@@ -1,7 +1,7 @@
 [{
   "identite" : {
-    "nom" : "Jean Louis",
-    "prenom" : "Tamère",
+    "prenom" : "Jean Louis",
+    "nom" : "Tamère",
     "telephone" : "0634343434",
     "mail" : "jlt@email.bidon"
   },
@@ -14,11 +14,11 @@
   },
   "nomExploitation" : "Chez l'enc...",
   "datePriseContact" : null,
-  "produits" : [ ]
+  "produits" : ["Chips", "Carottes", "Patates"]
 },{
   "identite" : {
-    "nom" : "Jean Robert",
-    "prenom" : "Tagueule",
+    "prenom" : "Jean Robert",
+    "nom" : "Tagueule",
     "telephone" : "0634343422",
     "mail" : "jrt@email.bidon"
   },
@@ -34,8 +34,8 @@
   "produits" : [ ]
 },{
   "identite" : {
-    "nom" : "Jean Marcel",
-    "prenom" : "Ducable",
+    "prenom" : "Jean Marcel",
+    "nom" : "Ducable",
     "telephone" : "0632123454",
     "mail" : "jmd@email.bidon"
   },
@@ -51,8 +51,8 @@
   "produits" : [ ]
 },{
   "identite" : {
-    "nom" : "Jean Mathieu",
-    "prenom" : "Dugenou",
+    "prenom" : "Jean Mathieu",
+    "nom" : "Dugenou",
     "telephone" : "0633265343",
     "mail" : "jlt@email.bidon"
   },
