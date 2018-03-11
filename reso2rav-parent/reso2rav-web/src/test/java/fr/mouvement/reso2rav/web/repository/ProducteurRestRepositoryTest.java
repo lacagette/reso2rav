@@ -35,7 +35,7 @@ public class ProducteurRestRepositoryTest extends AbstractTestWithJeuEssai {
 		mvc.perform(get("/producteurs?sort=identite.nom").contentType(MediaType.APPLICATION_JSON)).andDo(print())
 				.andExpect(status().isOk()).andExpect((content().contentTypeCompatibleWith("application/hal+json")))
 				.andExpect(jsonPath("$._embedded.producteurs", hasSize(equalTo(3))))
-				.andExpect(jsonPath("$._embedded.reseauRavitaillements[0].nom", is("La cagette")));
+				.andExpect(jsonPath("$._embedded.producteurs[0].identite.nom", is("Cloclo")));
 		// @formatter:on
 
 	}
