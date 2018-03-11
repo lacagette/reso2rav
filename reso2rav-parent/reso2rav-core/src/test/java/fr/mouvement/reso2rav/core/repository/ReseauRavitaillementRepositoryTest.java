@@ -15,7 +15,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +24,10 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import fr.mouvement.reso2rav.core.domain.Producteur;
 import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
-import fr.mouvement.reso2rav.core.utils.JeuEssaiUtils;
 
 @RunWith(SpringRunner.class)
 @Reso2RavRestRepositoryTest
-public class ReseauRavitaillementRepositoryTest {
+public class ReseauRavitaillementRepositoryTest extends AbstractTestWithJeuEssai {
 
 	@Autowired
 	private MockMvc mvc;
@@ -39,14 +37,6 @@ public class ReseauRavitaillementRepositoryTest {
 
 	@Autowired
 	private ProducteurRepository producteurRepository;
-
-	@Autowired
-	JeuEssaiUtils jeuEssaiUtils;
-
-	@Before
-	public void creerJeuTest() {
-		jeuEssaiUtils.creerJeuEssai();
-	}
 
 	@Test
 	public void testGetReseauRavitaillements() throws Exception {
