@@ -1,4 +1,4 @@
-package fr.mouvement.reso2rav.core.repository;
+package fr.mouvement.reso2rav.web.repository;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,9 +9,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import fr.mouvement.reso2rav.core.ApplicationCoreTest;
+import fr.mouvement.reso2rav.Application;
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = ApplicationCoreTest.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = Application.class)
 @AutoConfigureMockMvc
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
