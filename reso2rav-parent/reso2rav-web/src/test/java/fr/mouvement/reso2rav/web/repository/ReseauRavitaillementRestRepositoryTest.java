@@ -1,4 +1,4 @@
-package fr.mouvement.reso2rav.core.repository;
+package fr.mouvement.reso2rav.web.repository;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -24,10 +24,12 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import fr.mouvement.reso2rav.core.domain.Producteur;
 import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
+import fr.mouvement.reso2rav.core.repository.ProducteurRepository;
+import fr.mouvement.reso2rav.core.repository.ReseauRavitaillementRepository;
 
 @RunWith(SpringRunner.class)
 @Reso2RavRestRepositoryTest
-public class ReseauRavitaillementRepositoryTest extends AbstractTestWithJeuEssai {
+public class ReseauRavitaillementRestRepositoryTest extends AbstractTestWithJeuEssai {
 
 	@Autowired
 	private MockMvc mvc;

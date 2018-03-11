@@ -1,4 +1,4 @@
-package fr.mouvement.reso2rav.core.repository;
+package fr.mouvement.reso2rav.web.repository;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
