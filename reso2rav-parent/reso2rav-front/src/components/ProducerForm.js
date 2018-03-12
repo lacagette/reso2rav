@@ -1,7 +1,7 @@
 /**
  * Created by yoda on 09/03/18.
  */
-import { Component} from 'react';
+import React, { Component } from 'react';
 import { LocalForm, Control } from 'react-redux-form';
 
 class ProducerForm extends Component {
@@ -10,7 +10,7 @@ class ProducerForm extends Component {
     }
     render() {
         return(
-            <Form
+            <LocalForm
                 model="producer"
                 onSubmit={(producer) => this.handleSubmit(producer)}
             >
@@ -23,8 +23,10 @@ class ProducerForm extends Component {
                 <button type="submit">
                     Enregistrer le producteur
                 </button>
-            </Form>
+            </LocalForm>
         )
 
     }
 }
+
+export default ProducerForm;
