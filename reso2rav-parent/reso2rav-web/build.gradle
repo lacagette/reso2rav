@@ -22,4 +22,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile project(':reso2rav-core')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+    
 }
