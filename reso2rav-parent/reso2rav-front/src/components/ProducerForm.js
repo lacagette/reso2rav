@@ -2,7 +2,11 @@
  * Created by yoda on 09/03/18.
  */
 import React, { Component } from 'react';
-import { LocalForm, Control } from 'react-redux-form';
+import { LocalForm, Control, Errors } from 'react-redux-form';
+
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => val.length <= len;
+const isNumber = (val) => !isNaN(Number(val));
 
 class ProducerForm extends Component {
     handleSubmit(producer) {
@@ -28,8 +32,25 @@ class ProducerForm extends Component {
                 <label htmlFor="producer.identite.telephone">N° de téléphone:</label>
                 <Control.text model="producer.identite.telephone" id="producer.identite.telephone" />
                 {/*Email*/}
-                <label htmlFor="producer.mail.nom">Email:</label>
-                <Control.text model="producer.identite.mail" id="producer.identite.mail" />
+                <div className="field">
+                    <label htmlFor="producer.mail.nom">Email:</label>
+                    <Control.text model="producer.identite.mail"
+                                  id="producer.identite.mail"
+                                  validators={{
+                                      required,
+                                      validEmail: (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val),
+                                  }}
+                    />
+                    <Errors
+                        className="errors"
+                        model="user.email"
+                        show="touched"
+                        messages={{
+                            required: 'Required',
+                            validEmail: 'Invalid email address',
+                        }}
+                    />
+                </div>
                 {/*N° de rue*/}
                 <label htmlFor="producer.adresse.numero">N° de rue:</label>
                 <Control.text model="producer.adresse.numero" id="producer.adresse.numero" />
