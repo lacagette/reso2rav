@@ -2,7 +2,7 @@
  * Created by yoda on 09/03/18.
  */
 import React, { Component } from 'react';
-import { LocalForm, Control, Errors } from 'react-redux-form';
+import { LocalForm, Control } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => val.length <= len;
@@ -18,6 +18,10 @@ class ProducerForm extends Component {
             <LocalForm
                 model="producer"
                 onSubmit={(producer) => this.handleSubmit(producer)}
+                validators={{
+                    required,
+                    mail: (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
+                }}
             >
                 {/*Nom exploitation*/}
                 <label htmlFor="producer.nomExploitation">Nom de famille:</label>
@@ -32,25 +36,9 @@ class ProducerForm extends Component {
                 <label htmlFor="producer.identite.telephone">N° de téléphone:</label>
                 <Control.text model="producer.identite.telephone" id="producer.identite.telephone" />
                 {/*Email*/}
-                <div className="field">
-                    <label htmlFor="producer.mail.nom">Email:</label>
-                    <Control.text model="producer.identite.mail"
-                                  id="producer.identite.mail"
-                                  validators={{
-                                      required,
-                                      validEmail: (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val),
-                                  }}
-                    />
-                    <Errors
-                        className="errors"
-                        model="user.email"
-                        show="touched"
-                        messages={{
-                            required: 'Required',
-                            validEmail: 'Invalid email address',
-                        }}
-                    />
-                </div>
+                <label htmlFor="producer.identite.mail">Email:</label>
+                <Control.text model=".mail"
+                                  id="producer.identite.mail"/>
                 {/*N° de rue*/}
                 <label htmlFor="producer.adresse.numero">N° de rue:</label>
                 <Control.text model="producer.adresse.numero" id="producer.adresse.numero" />
