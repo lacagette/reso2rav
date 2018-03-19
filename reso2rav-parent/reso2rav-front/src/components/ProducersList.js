@@ -14,13 +14,22 @@ class ProducersList extends Component{
         return(
             <div>
                 <h2>Liste des producteurs:</h2>
-                <ul>
+                <table class="pure-table pure-table-bordered">
+                <thead>
+                    <tr>
+                      <th>Exploitation</th>
+                      <th>Nom</th>
+                      <th>Adresse</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     {
                     	this.props.producers.map((producer, index) => (
                         <Producer key={index} producer={producer}/>
                         ))
                     }
-                </ul>
+                  </tbody>
+                </table>
             </div>
         )
     }
