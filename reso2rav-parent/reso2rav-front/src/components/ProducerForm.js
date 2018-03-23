@@ -2,10 +2,11 @@
  * Created by yoda on 09/03/18.
  */
 import React, { Component } from 'react';
-import { LocalForm, Control } from 'react-redux-form';
+import { Form, Control } from 'react-redux-form';
+import { isEmail, isEmpty } from 'validator';
 import "./Forms.css";
 
-const required = (val) => val && val.length;
+const required = str => !isEmpty(str);
 const maxLength = (len) => (val) => val.length <= len;
 const isNumber = (val) => !isNaN(Number(val));
 
@@ -16,12 +17,11 @@ class ProducerForm extends Component {
     render() {
 
         return(
-            <LocalForm
+            <Form
                 model="producer"
                 onSubmit={(producer) => this.handleSubmit(producer)}
                 validators={{
-                    required,
-                    mail: (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
+                    email: { isEmail, required}
                 }}
             >
                 {/*Nom exploitation*/}
@@ -58,7 +58,7 @@ class ProducerForm extends Component {
                 <button type="submit">
                     Enregistrer le producteur
                 </button>
-            </LocalForm>
+            </Form>
         )
     }
 }
