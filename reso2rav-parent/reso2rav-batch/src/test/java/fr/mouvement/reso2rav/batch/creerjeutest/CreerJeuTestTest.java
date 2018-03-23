@@ -1,9 +1,8 @@
 package fr.mouvement.reso2rav.batch.creerjeutest;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
+import fr.mouvement.reso2rav.batch.BatchApplication;
+import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
+import fr.mouvement.reso2rav.core.repository.ReseauRavitaillementRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,9 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import fr.mouvement.reso2rav.batch.BatchApplication;
-import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
-import fr.mouvement.reso2rav.core.repository.ReseauRavitaillementRepository;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BatchApplication.class)
