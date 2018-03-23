@@ -1,4 +1,4 @@
-const producersReducer = (state = [], action) =>{
+const producersReducer = (state = {}, action) => {
     switch (action.type) {
         case 'FETCHING_PRODUCERS':
             return Object.assign({},state, {

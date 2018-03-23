@@ -3,8 +3,9 @@
  */
 import React, { Component } from 'react';
 import { Form, Control } from 'react-redux-form';
+import { connect } from 'react-redux';
 import { isEmail, isEmpty } from 'validator';
-import "./Forms.css";
+import "./forms.css";
 
 const required = str => !isEmpty(str);
 const maxLength = (len) => (val) => val.length <= len;
@@ -20,9 +21,6 @@ class ProducerForm extends Component {
             <Form
                 model="producer"
                 onSubmit={(producer) => this.handleSubmit(producer)}
-                validators={{
-                    email: { isEmail, required}
-                }}
             >
                 {/*Nom exploitation*/}
                 <label htmlFor="producer.nomExploitation">Nom de famille:</label>
@@ -38,7 +36,7 @@ class ProducerForm extends Component {
                 <Control.text model="producer.identite.telephone" id="producer.identite.telephone" />
                 {/*Email*/}
                 <label htmlFor="producer.identite.mail">Email:</label>
-                <Control.text model=".mail"
+                <Control.text model="producer.identite.mail"
                                   id="producer.identite.mail"/>
                 {/*N° de rue*/}
                 <label htmlFor="producer.adresse.numero">N° de rue:</label>
@@ -63,4 +61,4 @@ class ProducerForm extends Component {
     }
 }
 
-export default ProducerForm;
+export default connect(null)(ProducerForm);
