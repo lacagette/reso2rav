@@ -18,21 +18,23 @@ import java.util.Optional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 
 import fr.mouvement.reso2rav.core.domain.Producteur;
 import fr.mouvement.reso2rav.core.domain.ReseauRavitaillement;
 import fr.mouvement.reso2rav.core.repository.ProducteurRepository;
 import fr.mouvement.reso2rav.core.repository.ReseauRavitaillementRepository;
+import lombok.extern.slf4j.Slf4j;
 
 @RunWith(SpringRunner.class)
 @Reso2RavRestRepositoryTest
+@Slf4j
 public class ReseauRavitaillementRestRepositoryTest extends AbstractTestWithJeuEssai {
 
-	@Autowired
-	private MockMvc mvc;
+	@Value("spring.data.rest.base-path")
+	String basePath;
 
 	@Autowired
 	private ReseauRavitaillementRepository reseauRavitaillementRepository;
@@ -42,8 +44,9 @@ public class ReseauRavitaillementRestRepositoryTest extends AbstractTestWithJeuE
 
 	@Test
 	public void testGetReseauRavitaillements() throws Exception {
+
 		// @formatter:off
-		mvc.perform(get("/reseauRavitaillements").contentType(MediaType.APPLICATION_JSON)).andDo(print())
+		getMockMvc().perform(get("/reseauRavitaillements").contentType(MediaType.APPLICATION_JSON)).andDo(print())
 				.andExpect(status().isOk()).andExpect((content().contentTypeCompatibleWith("application/hal+json")))
 				.andExpect(jsonPath("$._embedded.reseauRavitaillements", hasSize(equalTo(1))))
 				.andExpect(jsonPath("$._embedded.reseauRavitaillements[0].nom", is("La cagette")));
@@ -61,7 +64,7 @@ public class ReseauRavitaillementRestRepositoryTest extends AbstractTestWithJeuE
 		ReseauRavitaillement reseauRavitaillement = optionalReseauRavitaillement.get();
 
 		// @formatter:off
-		mvc.perform(get("/reseauRavitaillements/" + reseauRavitaillement.getId() + "/producteurs")
+		getMockMvc().perform(get("/reseauRavitaillements/" + reseauRavitaillement.getId() + "/producteurs")
 				.contentType(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
 				.andExpect((content().contentTypeCompatibleWith("application/hal+json")))
 				.andExpect(jsonPath("$._embedded.producteurs", hasSize(equalTo(3))));
@@ -88,7 +91,7 @@ public class ReseauRavitaillementRestRepositoryTest extends AbstractTestWithJeuE
 		assertNotNull(newProducteur.getId());
 
 		// @formatter:off
-		mvc.perform(patch("/reseauRavitaillements/" + reseauRavitaillement.getId() + "/producteurs")
+		getMockMvc().perform(patch("/reseauRavitaillements/" + reseauRavitaillement.getId() + "/producteurs")
 				.contentType("text/uri-list")
 				.content("/producteurs/" + newProducteur.getId()))
 				.andDo(print())
