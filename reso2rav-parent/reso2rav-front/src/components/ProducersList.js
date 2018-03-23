@@ -14,7 +14,7 @@ class ProducersList extends Component{
         return(
             <div>
                 <h2>Liste des producteurs:</h2>
-                <table class="pure-table pure-table-bordered">
+                <table className="pure-table pure-table-bordered">
                 <thead>
                     <tr>
                       <th>Exploitation</th>
