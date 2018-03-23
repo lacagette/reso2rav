@@ -24,7 +24,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     combineReducers({
-        producersReducer: producersReducer,
+        producersReducer,
         ...createForms({
             producer: initialProducerState
         })
