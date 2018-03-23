@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import { LocalForm, Control } from 'react-redux-form';
+import "./Forms.css";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => val.length <= len;
