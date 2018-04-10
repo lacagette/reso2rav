@@ -1,2 +1,4 @@
 language: java
 before_script: cd reso2rav-parent
+notifications:
+  slack: lacagette:VJHypEDqoVsvWVbYDrrSfvRq
