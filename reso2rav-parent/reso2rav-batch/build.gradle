@@ -1,20 +1,12 @@
-buildscript {
-    ext { springBootVersion = '1.5.9.RELEASE' }
-    repositories { mavenCentral() }
-    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
-}
+plugins { id 'org.springframework.boot' version '1.5.9.RELEASE' }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'io.spring.dependency-management'
 apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'reso2rav-batch'
     version = '0.0.1-SNAPSHOT'
 }
-sourceCompatibility = 1.8
-
-repositories { mavenCentral() }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-batch')

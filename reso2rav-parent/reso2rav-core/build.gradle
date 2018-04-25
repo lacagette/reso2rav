@@ -1,21 +1,11 @@
-buildscript {
-    repositories { mavenCentral() }
-}
+plugins { id 'org.springframework.boot' version '1.5.9.RELEASE' }
 
-plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
-
-ext { springBootVersion = '1.5.9.RELEASE' }
-
-apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'io.spring.dependency-management'
 
 jar {
     baseName = 'reso2rav-core'
     version = '0.0.1-SNAPSHOT'
 }
-sourceCompatibility = 1.8
-
-repositories { mavenCentral() }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
@@ -28,6 +18,3 @@ dependencies {
     testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
 }
 
-dependencyManagement {
-    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
-}
