@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { Form, Control } from 'react-redux-form';
 import { connect } from 'react-redux';
 import { isEmail, isEmpty } from 'validator';
-import "./forms.css";
+// import "./forms.css";
 
 const required = str => !isEmpty(str);
 const maxLength = (len) => (val) => val.length <= len;
@@ -15,6 +15,7 @@ class ProducerForm extends Component {
     handleSubmit(producer) {
         console.log(producer)
     }
+
     render() {
 
         return(

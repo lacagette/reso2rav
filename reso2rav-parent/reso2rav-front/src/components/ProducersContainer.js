@@ -26,9 +26,9 @@ class ProducersContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        producers: state.producers,
-        hasErrored: state.hasErrored,
-        isFetching: state.isFetching,
+        producers: state.producersList.producers,
+        hasErrored: state.producersList.hasErrored,
+        isFetching: state.producersList.isFetching,
         error: state.error
     };
 };

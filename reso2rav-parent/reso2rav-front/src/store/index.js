@@ -22,14 +22,15 @@ const initialProducerState = {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const reducers = combineReducers({
+  producersList: producersReducer,
+  ...createForms({
+      producer: initialProducerState
+  }),
+})
+
 const store = createStore(
-    combineReducers({
-        producersReducer,
-        ...createForms({
-            producer: initialProducerState
-        })
-    })
-    ,
+    reducers,
     initialState,
     composeEnhancers(
         applyMiddleware(...middleware)
@@ -37,10 +38,3 @@ const store = createStore(
 )
 
 export default store;
-
-
-
-
-
-
-
